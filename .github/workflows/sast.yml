@@ -34,5 +34,6 @@ jobs:
           ./sonar-scanner-*/bin/sonar-scanner \
             -Dsonar.projectKey=tp-sast \
             -Dsonar.sources=. \
-            -Dsonar.host.url=http://<IP_SONAR>:9000 \
-            -Dsonar.login=$SONAR_TOKEN
+            -Dsonar.host.url=http://127.0.0.1:9000 \
+            -Dsonar.login=sqa_a85bf755e621f25be4747f3d823364e719ba535a
+
