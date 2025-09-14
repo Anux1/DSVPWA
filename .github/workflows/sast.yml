@@ -36,8 +36,12 @@ jobs:
             -Dsonar.sources=. \
             -Dsonar.host.url=http://127.0.0.1:9000 \
 <<<<<<< HEAD
+<<<<<<< HEAD
             -Dsonar.login=sqa_a85bf755e621f25be4747f3d823364e719ba535a
 =======
             -Dsonar.login=$sqa_a85bf755e621f25be4747f3d823364e719ba535a
 >>>>>>> bde2a87 (chore:declenchement du pipeline CI)
+=======
+            -Dsonar.login=sqa_a85bf755e621f25be4747f3d823364e719ba535a
+>>>>>>> e98384b (chore:declenchement du pipeline CI)
 
