@@ -35,7 +35,7 @@ jobs:
           ./sonar-scanner-*/bin/sonar-scanner \
             -Dsonar.projectKey=tp-sast \
             -Dsonar.sources=. \
-            -Dsonar.host.url=http://127.0.0.1:9000 \
+            -Dsonar.host.url=https://5e83a959e1e3.ngrok-free.app \
             -Dsonar.login=$SONAR_TOKEN \
             -X
 
