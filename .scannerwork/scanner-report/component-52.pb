@@ -1,0 +1,1 @@
+4 2webX6hrtemplates/diagnostics.html
