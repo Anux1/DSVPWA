@@ -29,7 +29,7 @@ jobs:
           chmod +x sonar-scanner-*/bin/sonar-scanner
       - name: Run SonarQube Scan
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.squ_8a51236e063f9ed4775f1e229cd526134256beff }}
         run: |
           ./sonar-scanner-*/bin/sonar-scanner \
             -Dsonar.projectKey=tp-sast \
