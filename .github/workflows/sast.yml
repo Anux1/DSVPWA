@@ -1,4 +1,3 @@
-
 name: SAST SonarQube
 
 on:
@@ -7,36 +6,8 @@ on:
 
 jobs:
   sonarqube-analysis:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-
-      - name: Cache SonarQube packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-
-      - name: Download SonarScanner
-        run: |
-          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856.zip
-          unzip sonar-scanner.zip
-          chmod +x sonar-scanner-*/bin/sonar-scanner
-
+      - uses: actions/checkout@v4
       - name: Run SonarQube Scan
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          ./sonar-scanner-*/bin/sonar-scanner \
-            -Dsonar.projectKey=tp-sast \
-            -Dsonar.sources=. \
-            -Dsonar.host.url=https://af33-2c0f-f698-c13c-b4fc-1f20-b413-a491-c519.ngrok-free.app  \
-            -Dsonar.login=$SONAR_TOKEN \
-            -X
-
+        run: sonar-scanner -Dsonar.projectKey=tp-sast -Dsonar.sources=. -Dsonar.exclusions=venv/** -Dsonar.host.url=http://localhost:9000 -Dsonar.token=${{ secrets.SONAR_TOKEN }}
